@@ -1,0 +1,19 @@
+//Esta función se encarga de cerrar el juego y mostrar la solución del Sudoku cuando el jugador decide rendirse 
+Procedure rendirse(x:Integer);
+Begin
+ If (winner(matriz_i)=True)Then
+ Begin
+ textcolor(yellow);
+ Writeln('Gracias por jugar!');
+ Writeln('Hasta luego!');
+ textcolor(white);
+ Exit;
+ End;
+ If (winner(matriz_i)=False)Then
+ Begin
+ Writeln('Mejor suerte la próxima!' );
+ Writeln('se resuelve el sudoku:' );
+ mostrar(matriz_f);
+ Exit;
+ End;
+End;
