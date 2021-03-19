@@ -1,3 +1,57 @@
+Program sudoku;
+Uses crt;
+Type
+ matriz = Array [1..9, 1..9] Of Integer;
+Var
+ i, j, x, op,v: Integer;
+ y: Char;
+Const
+ blue = 1;
+ green = 2;
+ red = 4;
+ brown = 6;
+ white = 7;
+ yellow = 14;
+ black = 0;
+ //Esta matriz_f es el sudoky completo y terminado.
+ matriz_f : matriz =
+ ((9,6,3,1,7,4,2,5,8),
+ (1,7,8,3,2,5,6,4,9),
+ (2,5,4,6,8,9,7,3,1),
+ (8,2,1,4,3,7,5,9,6),
+ (4,9,6,8,5,2,3,1,7),
+ (7,3,5,9,6,1,8,2,4),
+ (5,8,9,7,1,3,4,6,2),
+ (3,1,7,2,4,6,9,8,5),
+ (6,4,2,5,9,8,1,7,3));
+ // esta matriz_i es el sudoku incompleto, como es presentado al ususario al inicio.
+ matriz_i : matriz =
+ ((0,6,0,1,0,4,0,5,0),
+ (0,0,8,3,0,5,6,0,0),
+ (2,0,0,0,0,0,0,0,1),
+ (8,0,0,4,0,7,0,0,6),
+ (0,0,6,0,0,0,3,0,0),
+ (7,0,0,9,0,1,0,0,4),
+ (5,0,0,0,0,0,0,0,2),
+ (0,0,7,2,0,6,9,0,0),
+ (0,4,0,5,0,8,0,7,0));
+ //Esta matriz es el sudoku que le es presentado al usuario,
+//que no puede ser modficado. Para ser tomando como referencia para los recuadros que no pueden ser modificados
+ matriz_org : matriz =
+ (( 0,6,0,1,0,4,0,5,0),
+ ( 0,0,8,3,0,5,6,0,0),
+ ( 2,0,0,0,0,0,0,0,1),
+ ( 8,0,0,4,0,7,0,0,6),
+ ( 0,0,6,0,0,0,3,0,0),
+ ( 7,0,0,9,0,1,0,0,4),
+ ( 5,0,0,0,0,0,0,0,2),
+ ( 0,0,7,2,0,6,9,0,0),
+ ( 0,4,0,5,0,8,0,7,0));
+ //Este arreglo vectorial tiene la enumeración de las filas
+ filas: Array [1..9] Of Integer = (1,2,3,4,5,6,7,8,9);
+ //Y este tiene la identificación de las columnas
+ columnas: Array [1..9] Of Char = ('A','B','C','D','E','F','G','H','I');
+
 //Este es el cuerpo principal donde se usan todas las funciones y procedimientos
 Begin
  textbackground(black);
