@@ -1,0 +1,9 @@
+//Esta funcion convierte los valores de caracter que representan las columnas en numeros integrales compatibles con la matriz
+Function letter2num(x:Char): Integer;
+Begin
+ i := 0;
+ Repeat
+ i := i+1;
+ If x=columnas[i] Then letter2num := i;
+ Until (x=columnas[i]);
+End;
