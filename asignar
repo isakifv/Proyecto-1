@@ -1,0 +1,38 @@
+//Este procedimiento esta encardo de asignar el valor a algun espacio vacio de la matriz.
+Procedure asignar(m:matriz);
+Var
+ x,v,a: Integer;
+ y: Char;
+ valid:Boolean;
+Begin
+ Writeln('Introduzca la columna del cuadro a modificar:' );
+ valid:=false;
+ Repeat
+ Readln(y);
+ case y of
+ 'A','B','C','D','E','F','G','H','I': valid:=true;
+ else;
+ Begin
+ WriteLn('Valor inválido, las letras deben ser mayúscula' );
+ WriteLn('Intente denuevo.');
+ End;
+ end;
+ Until(valid=true);
+ a := letter2num(y);
+ Writeln('Introduzca la fila del cuadro a modificar:' );
+ Readln(x);
+ Repeat
+ Writeln('Introduzca el valor que desea colocar en el cuadro');
+ Readln(v);
+ If ((v<0) Or (v>9)) Then Writeln('Valor inválido. Debe estar entre 1 y 9.' );
+ Until ((v>0) And (v<10));
+Case verifpos(x,y) Of
+ True:
+ Begin
+ matriz_i[x,a] := v;
+ End;
+ False: Writeln(
+ 'Posición inválida. Valores demasiado grandes o cuadro que no puede ser modificado'
+ );
+ End;
+End;
