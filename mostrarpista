@@ -1,0 +1,58 @@
+// El procedimiento MOSTRARPISTA se encarga exclusivamente de imprimir los valores organizados del Sudoku para ser visualizados comodamente por el usuario
+// Resaltando la pista que se añadio
+Procedure mostrarpista(x:matriz; a:Integer; b:Integer);
+Var
+ i,j: Integer;
+Begin
+ i := 1;
+ j := 1;
+ Writeln('Estado del sudoku:');
+ Writeln('-----------------------------------------' );
+ Textcolor(blue);
+ textbackground(white);
+ Write(' | ');
+ Repeat
+ Textcolor(blue);
+ textbackground(white);
+ Write(columnas[i],' | ');
+ Textcolor(white);
+ textbackground(black);
+ i := i+1;
+ Until (i=10);
+ Writeln('');
+ Writeln('-----------------------------------------' );
+ Repeat
+ i := 1;
+ Write('|');
+ textbackground(white);
+ Textcolor(blue);
+ Write(' ',filas[j],' ');
+ textbackground(black);
+ Textcolor(white);
+ Write('| ');
+ Repeat
+ If ((a=j)And(b=i)) Then
+ Begin
+ textcolor(yellow);
+ Write(x[j,i]);
+ textcolor(white);
+ Write(' | ');
+ End
+ Else
+ Begin
+ textcolor(white);
+ Write(x[j,i],' | ');
+ End;
+ textcolor(white);
+ i := i+1;
+ Until (i=10);
+ Writeln(' ');
+ Writeln('-----------------------------------------' );
+ j := j+1;
+ Until (j=10);
+ If (winner(matriz_i)=True)Then
+ Begin
+ textcolor(yellow);
+ Writeln('GANADOR!');
+ textcolor(white);
+ Write('Has completado el sudoku' );
