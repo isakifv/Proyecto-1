@@ -1,0 +1,23 @@
+//Este procedimiento es el menu que maneja todos los otros procedimientos, los maneja y selecciona
+Procedure menu(op:Integer);
+Begin
+ Repeat
+ Writeln('Opciones:');
+ Writeln('1- Mostrar el estado del sudoku.');
+ Writeln('2- Asignar un valor a alguna caja válida del sudoku.');
+ Writeln('3- Ver una pista del sudoku.');
+ Writeln('4- Rendirse y ver la solución del sudoku.' );
+ Readln(op);
+ Case op Of
+ 1: mostrar(matriz_i);
+ 2: asignar(matriz_i);
+ 3: pista(matriz_i);
+ 4:
+ Begin
+ rendirse(j);
+ End;
+ Else
+ Writeln('Valor inválido. Introduzca un valor entre 1 y 4.' );
+ End;
+ Until (op=4);
+End;
