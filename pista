@@ -1,0 +1,23 @@
+//Esta funcion añade una pista al tablero de sudoku. Es decir, coloca un número correcto en el tablero.
+Function pista(m_i:matriz): matriz;
+Var
+ i,j: Integer;
+Begin
+ i := 1;
+ j := 1;
+ Repeat
+ i := 1;
+ Repeat
+ If matriz_i[j,i]<>matriz_f[j,i] Then
+ Begin
+ matriz_i[j,i] := matriz_f[j,i];
+ pista := matriz_i;
+ mostrarpista(matriz_i,j,i);
+ Writeln('La pista se ubica en la columna ', columnas[i],' y en la fila ', j, '.');
+ Exit;
+ End;
+ i := i+1;
+ Until (i>9);
+ j := j+1;
+ Until (j>10);
+End;
