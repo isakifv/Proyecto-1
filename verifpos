@@ -1,0 +1,13 @@
+// Esta funcion verifica que la posicion que el usuario va a modificar no sea un valor original del sudoku.
+//Si resulta FALSE, el valor no debe ser cambiado y si resulta TRUE, si puede ser modificado
+
+Function verifpos(x:Integer;q:Char): Boolean;
+Var
+ bool: Boolean;
+ y: Integer;
+Begin
+ y := (letter2num(q));
+ If matriz_org[x,y] <> 0 Then bool := False;
+ If matriz_org[x,y] = 0 Then bool := True;
+ verifpos := bool;
+End;
