@@ -31,15 +31,50 @@ Begin
  Textcolor(white);
  Write('| ');
  Repeat
- If ((a=j)And(b=i)) Then
+ If ((matriz_i[j,i]<>matriz_f[j,i])and(matriz_i[j,i]<>0)) Then
  Begin
- textcolor(yellow);
+Textcolor(red);
  Write(x[j,i]);
- textcolor(white);
+ Textcolor(white);
+ Write(' | ');
+ End
+ Else
+ begin
+ If ((a=j)and(b=i)) Then
+ Begin
+ Textcolor(yellow);
+ Write(x[j,i]);
+ Textcolor(white);
  Write(' | ');
  End
  Else
  Begin
- textcolor(white);
- Write(x[j,i],' | ');
+ Textcolor(white);
+ Write(x[j,i]);
+ Textcolor(white);
+ Write(' | ');
  End;
+ end;
+ i := i+1;
+ Until (i=10);
+ Writeln(' ');
+ Writeln('-----------------------------------------' );
+ j := j+1;
+ Until (j=10);
+ If (winner(matriz_i)=True)Then
+ Begin
+ textcolor(yellow);
+ Writeln('GANADOR!');
+ textcolor(white);
+ Write('Has completado el sudoku' );
+ textcolor(yellow);
+ Writeln(' existosamente!');
+ textcolor(white);
+ Writeln('Gracias por jugar.');
+ Write('Selecciona la');
+ textcolor(yellow);
+ Write(' opción 4 ');
+ textcolor(white);
+ Writeln('para salir y terminar el juego.');
+ End;
+End;
