@@ -1,0 +1,19 @@
+//Esta funcion se encargar de interrupir el proceso del programa cuando el jugador completa correctamente el sudoku.
+Function winner(matriz:matriz): Boolean;
+Begin
+ i := 1;
+ j := 1;
+ Repeat
+ i := 1;
+ Repeat
+ If matriz_i[j,i]<>matriz_f[j,i] Then
+ Begin
+ winner := False;
+ Exit;
+ End;
+ i := i+1;
+ Until (i>9);
+ j := j+1;
+ Until (j>9);
+ winner := True;
+End;
