@@ -1,0 +1,9 @@
+//Este es el cuerpo principal donde se usan todas las funciones y procedimientos
+Begin
+ textbackground(black);
+ Writeln('Bienvenido al Sudoku.');
+ Writeln('Este es el rompecabezas de hoy:');
+ mostrar(matriz_org);
+ menu(op);
+ Exit;
+End.
