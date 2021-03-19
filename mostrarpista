@@ -43,16 +43,3 @@ Begin
  textcolor(white);
  Write(x[j,i],' | ');
  End;
- textcolor(white);
- i := i+1;
- Until (i=10);
- Writeln(' ');
- Writeln('-----------------------------------------' );
- j := j+1;
- Until (j=10);
- If (winner(matriz_i)=True)Then
- Begin
- textcolor(yellow);
- Writeln('GANADOR!');
- textcolor(white);
- Write('Has completado el sudoku' );
