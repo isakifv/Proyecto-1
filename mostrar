@@ -37,7 +37,30 @@ Textcolor(white);
  Textcolor(white);
  Write('| ');
  Repeat
- Write(x[j,i],' | ');
+ If ((matriz_i[j,i]<>matriz_f[j,i])and(matriz_i[j,i]<>0)) Then
+ Begin
+ Textcolor(red);
+ Write(x[j,i]);
+ Textcolor(white);
+ Write(' | ');
+ End
+ Else
+ begin
+ If matriz_i[j,i]=matriz_f[j,i] Then
+ Begin
+ Textcolor(green);
+ Write(x[j,i]);
+ Textcolor(white);
+ Write(' | ');
+ End
+ Else
+ Begin
+ Textcolor(white);
+ Write(x[j,i]);
+ Textcolor(white);
+ Write(' | ');
+ End;
+ end;
  i := i+1;
  Until (i=10);
  Writeln(' ');
